@@ -32,6 +32,9 @@ provider:
   environment:
     tableName:
       Ref: NotesTable
+    questionsTable:
+      Ref: QuestionsTable
+    
 
   iamRoleStatements:
     - Effect: Allow
@@ -110,6 +113,23 @@ functions:
       - http:
           path: notes/{id}
           method: delete
+          cors: true
+          authorizer: aws_iam
+          
+  #====================      
+  # QUESTIONS API
+  #====================      
+  # - path: url path is /questions
+  # - method: POST request
+  # - cors: enabled CORS (Cross-Origin Resource Sharing) for browser cross
+  #     domain api call
+  # - authorizer: authenticate using the AWS IAM role  
+  questionCreate:
+    handler: questionCreate.main
+    events:
+      - http:
+          path: questions
+          method: post
           cors: true
           authorizer: aws_iam
           

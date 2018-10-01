@@ -1,0 +1,8 @@
+{
+  "body": "{\"content\":\"Who is the ruler of Nazarick?\",\"answer\":\"Ainz Ooal Gown\",\"topic\":\"Overlord\"}",
+  "requestContext": {
+    "identity": {
+      "cognitoIdentityId": "USER-SUB-1234"
+    }
+  }
+}
