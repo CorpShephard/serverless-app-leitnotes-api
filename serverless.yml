@@ -50,6 +50,7 @@ provider:
       # the specific table for the stage
       Resource:
         - "Fn::GetAtt": [ NotesTable, Arn ]
+        - "Fn::GetAtt": [ QuestionsTable, Arn ]
       # Resource: "arn:aws:dynamodb:us-east-2:*:*" Old resource method
       
 functions:
