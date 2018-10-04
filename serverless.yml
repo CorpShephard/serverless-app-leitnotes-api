@@ -134,6 +134,15 @@ functions:
           cors: true
           authorizer: aws_iam
           
+  questionList:
+    handler: questionList.main
+    events:
+      - http:
+          path: questions
+          method: get
+          cors: true
+          authorizer: aws_iam
+          
 # Create our resources with separate CloudFormation templates
 resources:
   # DynamoDB
