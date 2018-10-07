@@ -134,6 +134,9 @@ functions:
           cors: true
           authorizer: aws_iam
           
+  # Defines an HTTP API endpoint that calls the main function in list.js
+  # - path: url path is /questions
+  # - method: GET request        
   questionList:
     handler: questionList.main
     events:
