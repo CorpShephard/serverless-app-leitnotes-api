@@ -134,7 +134,7 @@ functions:
           cors: true
           authorizer: aws_iam
           
-  # Defines an HTTP API endpoint that calls the main function in list.js
+  # Defines an HTTP API endpoint that calls the main function in questionList.js
   # - path: url path is /questions
   # - method: GET request        
   questionList:
@@ -145,6 +145,45 @@ functions:
           method: get
           cors: true
           authorizer: aws_iam
+          
+  # Defines an HTTP API endpoint that calls the main function in questionGet.js
+  # - path: url path is /questions/{id}
+  # - method: GET request        
+  questionGet:
+    handler: questionGet.main
+    events:
+      - http:
+          path: questions/{id}
+          method: get
+          cors: true
+          authorizer: aws_iam
+          
+    
+  # Defines an HTTP API endpoint that calls the main function in questionUpdate.js
+  # - path: url path is /questions/{id}
+  # - method: PUT request
+  questionUpdate:
+    handler: questionUpdate.main
+    events:
+      - http:
+        path: questions/{id}
+        method: put
+        cors: true
+        authorizer: aws_iam
+
+  
+  # Defines an HTTP API endpoint that calls the main function in questionDelete.js
+  # - path: url path is /questions/{id}
+  # - method: DELETE request
+  questionDelete:
+    handler: questionDelete.main
+    events:
+      - http:
+          path: questions/{id}
+          method: delete
+          cors: true
+          authorizer: aws_iam        
+        
           
 # Create our resources with separate CloudFormation templates
 resources:
