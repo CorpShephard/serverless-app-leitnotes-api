@@ -166,10 +166,10 @@ functions:
     handler: questionUpdate.main
     events:
       - http:
-        path: questions/{id}
-        method: put
-        cors: true
-        authorizer: aws_iam
+          path: questions/{id}
+          method: put
+          cors: true
+          authorizer: aws_iam
 
   
   # Defines an HTTP API endpoint that calls the main function in questionDelete.js
