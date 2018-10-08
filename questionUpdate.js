@@ -9,8 +9,8 @@ export async function main(event, context, callback) {
     // - 'userId': Identity Pool identity id of the authenticated user
     // - 'questionId': path parameter passed in with UUID of the question.
     Key: {
-	  questionId: event.pathParameters.id
-      userId: event.requestContext.identity.cognitoIdentityId,
+	  questionId: event.pathParameters.id,
+      userId: event.requestContext.identity.cognitoIdentityId
     },
     // 'UpdateExpression' defines the attributes to be updated
     // 'ExpressionAttributeValues' defines the value in the update expression
