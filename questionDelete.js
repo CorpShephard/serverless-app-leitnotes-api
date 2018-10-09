@@ -3,7 +3,7 @@ import { success, failure } from "./libs/response-lib";
 
 export async function main(event, context, callback) {
   const params = {
-    TableName: process.env.tableName,
+    TableName: process.env.questionsTable,
     // 'Key' defines the partition key and sort key of the item to be removed
     // - 'questionId': path parameter
     Key: {
