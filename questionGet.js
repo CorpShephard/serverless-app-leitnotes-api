@@ -9,7 +9,6 @@ export async function main(event, context, callback) {
 
     Key: {
       questionId: event.pathParameters.id,
-      userId: event.requestContext.identity.cognitoIdentityId
     }
   };
 
